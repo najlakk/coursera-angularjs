@@ -18,16 +18,38 @@ function LunchCheckController($scope) {
 
     if ($scope.list != "" && dish.length <= 3){
       $scope.sayMessage = "Enjoy!";
+      //Bonus:Below code is for giving color to the text and border
+      $scope.msgcolor ={
+        "color" : "green"
+      }
+      $scope.bordercolor = {
+        "border-color": "green",
+        "border-width" : "2px"       
+      }
     }
     else if (dish.length > 3){
       $scope.sayMessage = "Too much!";
+      //Bonus:Below code is for giving color to the text and border
+      $scope.bordercolor = {
+        "border-color": "green",
+        "border-width" : "2px"       
+      }
+      $scope.msgcolor ={
+        "color" : "green"
+      }
     }
     else{
       $scope.sayMessage = "Please enter data first";
+      //Bonus:Below code is for giving color to the text and border
+      $scope.bordercolor = {
+        "border-color": "red",
+        "border-width" : "2px"       
+      }
+      $scope.msgcolor ={
+        "color" : "red"
+      }
     }
-
-  };
- 
+  }; 
 }
 
 })();
