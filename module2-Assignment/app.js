@@ -12,8 +12,8 @@
       var itemBuy = this;
       itemBuy.tobuy = ShoppingListCheckOffService.getItems();
       itemBuy.buyItem = function(itemIndex) {
-          itemBuy.tobuy = ShoppingListCheckOffService.getItems();
-          ShoppingListCheckOffService.buyItem(itemBuy.tobuy, itemIndex);
+          //itemBuy.tobuy = ShoppingListCheckOffService.getItems();
+          ShoppingListCheckOffService.buyItem(itemIndex);
       }
   }
 
@@ -52,7 +52,7 @@
 
       var bought = [];
 
-      service.buyItem = function(tobuy, itemIndex) {
+      service.buyItem = function(itemIndex) {
           console.log('inside buyItem: ' + itemIndex);
           bought.push(tobuy[itemIndex]);
           tobuy.splice(itemIndex, 1);      
