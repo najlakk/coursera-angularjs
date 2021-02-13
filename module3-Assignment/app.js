@@ -60,7 +60,7 @@
       menu.checkMenuLength = function() {
 
           console.log('menu.menu.foundItems.length ' + menu.menu.foundItems.length);
-          if (menu.menu.flag == 1 && menu.menu.foundItems.length == 0) {
+          if ( menu.menu.foundItems.length == 0) {
               console.log('array length is zero');
               return true;
           } else {
@@ -76,8 +76,9 @@
       menu.foundItems = [];
 
       menu.getMatchedMenuItems = function() {
-          menu.flag = 1;
+          
           menu.foundItems = MenuSearchService.getMatchedMenuItems(menu.searchTerm);
+          //menu.flag = 1;
       }
 
       menu.removeItem = function(itemIndex) {

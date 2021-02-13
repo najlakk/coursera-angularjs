@@ -33,7 +33,7 @@ input[type="text"] {
 .error {
   color: red;
   font-weight: bold;
-  display: none;
+  
 }
 
 @-webkit-keyframes load8 {
