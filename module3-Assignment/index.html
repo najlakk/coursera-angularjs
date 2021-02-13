@@ -18,10 +18,10 @@
                <input type="text" ng-model="menu.searchTerm" placeholder="search term" class="form-control">
             </div>
             <div class="form-group narrow-button">
-               <button ng-click="menu.getMatchedMenuItems();" class="btn btn-primary">Narrow It Down For Me!</button>
+               <button ng-click="menu.getMatchedMenuItems(menu.searchTerm);" class="btn btn-primary">Narrow It Down For Me!</button>
             </div>           
             <found-items 
-               my-list="menu" 
+               items="menu.foundItems" 
                on-remove="menu.removeItem(index)"></found-items>
          </div>
       </div>
