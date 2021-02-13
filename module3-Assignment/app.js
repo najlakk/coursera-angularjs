@@ -24,7 +24,6 @@
   }
 
   NarrowItDownController.$inject = ['MenuSearchService'];
-
   function NarrowItDownController(MenuSearchService) {
       var menu = this;
 
@@ -40,39 +39,35 @@
 
       menu.removeItem = function(itemIndex) {
           console.log('inside remove ' + itemIndex);
-          console.log("'this' is: ", this);
           MenuSearchService.removeItem(itemIndex);
 
       };
   }
 
-
   MenuSearchService.$inject = ['$http', 'ApiBasePath'];
-
   function MenuSearchService($http, ApiBasePath) {
       var service = this;
       var foundItems = [];
 
       service.getMatchedMenuItems = function(searchTerm) {
           var promise = $http({
-                  method: "GET",
-                  url: (ApiBasePath),
-              });
-           return promise.then(function(response) {
+              method: "GET",
+              url: (ApiBasePath),
+          });
+          return promise.then(function(response) {
                   foundItems = [];
                   var j = -1;
                   console.log(response.data);
 
-                  console.log(response.data.menu_items);
-                  console.log(response.data.menu_items.length);
-                  console.log(response.data.menu_items[0]);
-                  console.log(response.data.menu_items[0].description);
-
-                  for (var i = 0; i < response.data.menu_items.length; i++) {
-                      if (response.data.menu_items[i].description.includes(searchTerm)) {
-                          //console.log(response.data.menu_items[i].description);
-                          j = j + 1;
-                          foundItems[j] = response.data.menu_items[i];
+                  if (searchTerm == null || searchTerm == undefined || searchTerm == "") {
+                      foundItems = [];
+                  } else {
+                      for (var i = 0; i < response.data.menu_items.length; i++) {
+                          if (response.data.menu_items[i].description.includes(searchTerm)) {
+                              //console.log(response.data.menu_items[i].description);
+                              j = j + 1;
+                              foundItems[j] = response.data.menu_items[i];
+                          }
                       }
                   }
                   console.log('foundItems length ' + foundItems.length);
