@@ -26,5 +26,28 @@ button {
 
 #info {
   margin-top: 20px;
+  font-size: 15px;
 }
+
+#signup {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #3F0C1F;
+  border: 2px solid #3F0C1F;
+  background-color: #f6b319;
+  padding-left: 7px;
+  padding-right: 7px;
+  height: 45px;
+  width: 300px;
+}
+
+#signup:hover {
+  display: inline-block;
+  cursor: pointer;
+  border: solid #3F0C1F 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color:#3F0C1F;
+}
+
 

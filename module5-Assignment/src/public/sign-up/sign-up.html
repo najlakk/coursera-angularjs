@@ -1,7 +1,6 @@
 <div class="container">
  <fieldset>
     <h1>Sign Up</h1>
-    <!-- <legend>Registration</legend> -->
     <form name='regForm' novalidate>
       <br>
       <h5>First Name: </h5>
@@ -65,19 +64,15 @@
         ng-disabled="regForm.$invalid"
         ng-click="signUpCtrl.submit(signUpCtrl.user.shortname)">Submit</button>
       
-      
-        <!-- <div style="margin-top: 10px;">
-          Form valid? {{ regForm.$valid }}
-        </div> -->
     </form>
     <fieldset>
 
-  <div id="info" ng-if="signUpCtrl.completed">
-    Username: {{ signUpCtrl.user.username}} <br>
+  <div ng-if="signUpCtrl.completed">
+    <!-- Username: {{ signUpCtrl.user.username}} <br>
     Email: {{ signUpCtrl.user.email}} <br>
     Phone: {{ signUpCtrl.user.phone }} <br>
-    Favorite Item: {{ signUpCtrl.itemname }} <br>
-    Your Information has been saved!
+    Favorite Item: {{ signUpCtrl.itemname }} <br> -->
+    <h3>Your Information has been saved!</h3>
   </div>
 
 </div>

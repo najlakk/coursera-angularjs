@@ -46,32 +46,12 @@ function routeConfig ($stateProvider) {
       templateUrl: 'src/public/sign-up/sign-up.html',
       controller: 'SignUpController',
       controllerAs: 'signUpCtrl'
-      // resolve: {
-      //   favorites: ['MenuService', function (MenuService) {
-      //     return MenuService.getFavorites(shortName);
-      //   }]
-      // }
-      // resolve: {
-      //   menuItems: ['$stateParams','MenuService', function ($stateParams, MenuService) {
-      //     return MenuService.getMenuItems($stateParams.category);
-      //   }]
-      // }
     })
     .state('public.info', {
       url: '/info',
-      templateUrl: 'src/public/sign-up/info.html',
+      templateUrl: 'src/public/info/info.html',
       controller: 'InfoController',
       controllerAs: 'infoCtrl'
-      // resolve: {
-      //   favorites: ['MenuService', function (MenuService) {
-      //     return MenuService.getFavorites(shortName);
-      //   }]
-      // }
-      // resolve: {
-      //   menuItems: ['$stateParams','MenuService', function ($stateParams, MenuService) {
-      //     return MenuService.getMenuItems($stateParams.category);
-      //   }]
-      // }
     });
 }
 })();

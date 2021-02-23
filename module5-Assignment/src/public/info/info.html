@@ -1,0 +1,35 @@
+<div class="container">
+    <div id="info" ng-if="infoCtrl.present == true">
+        First Name: {{ infoCtrl.username}} <br>
+        Last name: {{ infoCtrl.lastname}} <br>
+        Email: {{ infoCtrl.email}} <br>
+        Phone: {{ infoCtrl.phone }} <br>
+        Favorite Item: <br> 
+        <br>
+
+        <div class="menu-item-tile col-md-6">
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="menu-item-photo">
+                  <div>{{infoCtrl.menuItem.short_name}}</div>
+                  <img class="img-responsive" width="250" height="150" ng-src="{{infoCtrl.basePath}}/images/{{infoCtrl.menuItem.short_name}}.jpg" alt="{{$ctrl.menuItem.name}}">
+                </div>
+                <div class="menu-item-price">{{infoCtrl.menuItem.price_small | currency}}<span> {{infoCtrl.menuItem.small_portion_name}}</span> {{$ctrl.menuItem.price_large | currency}} <span>{{$ctrl.menuItem.large_portion_name}}</span></div>
+              </div>
+              <div class="menu-item-description col-sm-7">
+                <h3 class="menu-item-title">{{infoCtrl.menuItem.name}}</h3>
+                <p class="menu-item-details">{{infoCtrl.menuItem.description}}</p>
+              </div>
+            </div>
+            <hr class="visible-xs">
+          </div>
+
+      </div>
+
+        <div ng-if="infoCtrl.present == false"> 
+            <h3>Not Signed Up Yet! </h3>
+        
+            <div id=signup ui-sref="public.signup">Sign Up Now!</div>
+        </div>
+  </div>
+  

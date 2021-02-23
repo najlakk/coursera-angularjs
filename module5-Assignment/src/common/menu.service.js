@@ -27,12 +27,22 @@ function MenuService($http, ApiPath) {
     });
   };
 
-  // service.getFavorites = function (shortName) {
-  //   console.log('inside getFavorites');
-  //   return $http.get(ApiPath + '/menu_items/' + shortName + '.json').then(function (response) {
-  //     return response.data;
-  //   });
-  // };
+  service.getFavorites = function (shortName) {
+    console.log('inside getFavorites');
+    return $http.get(ApiPath + '/menu_items/' + shortName + '.json');
+  };
+
+  service.saveUserFavorites = function (userDetails) {
+    console.log('inside saveUserFavorites');
+    console.log(userDetails.userfav);
+    console.log(userDetails.userfav.id);
+    service.userDetails = userDetails;
+  };
+
+  service.getUserFavorites = function () {
+    console.log('inside getFavorites');
+    return service.userDetails;
+  };
   
 
 }
